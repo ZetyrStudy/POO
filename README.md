@@ -1,2 +1,2 @@
 # POO
-Aulas de POO - Porgramação Orientada a Objetos
+Aulas de POO - Programação Orientada a Objetos
