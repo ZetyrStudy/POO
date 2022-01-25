@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    var users = ["rodrigo","sabrina"];
+
+    function login() {
+
+    var userLogin = document.getElementById("userLogin").value;
+    if (userLogin.length === 0) {
+        alert('Please enter Username');
+        return;
+    } else {
+        checkUserLogin(userLogin);
+    }
+    };
+    
+    function checkUserLogin(userLogin){
+    if(users.indexOf(userLogin) > -1){
+        password();
+        return;
+    }
+    else{
+        alert("Invalid username, please try again or if you are new register");
+        return;           
+    }                
+    };
+
+
+    var pw = ["rod"];
+
+    function password() {
+
+    var pwPassword = document.getElementById("pwPassword").value;
+    if (pwPassword.length === 0) {
+        alert('Please enter Password');
+        return;
+    } else {
+        checkPwPassword(pwPassword);
+    }
+    };
+    
+    function checkPwPassword(pwPassword){
+    if(pw.indexOf(pwPassword) > -1){
+        location.href = 'http://www.google.com';
+        return;
+    }
+    else{
+        alert("Invalid password, please try again or if you are new register");
+        return;           
+    }                
+    };
+    
+    
+    </script>
+
+    <p style="font-size:22px"><b>Login:</b></p>
+    <input type = "text" id = "userLogin" /><br>
+    <p style="font-size:22px"><b>Password:</b></p>
+    <input type = "text" id = "pwPassword" /><br>
+    <p></p>
+    <input type = "button" value = "Submit" onclick = "login()" />
+ 
+
+</body>
+</html>

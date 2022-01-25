@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+<form>
+    <p style="font-size:22px"><b>Login:</b></p>
+    <input type="text" id="userLogin" /><br>
+    <p style="font-size:22px"><b>Password:</b></p>
+    <input type="text" id="pwPassword" /><br>
+    <p></p>
+    <input type="button" value="Submit" onclick="login()" />
+</form>
+
+    <script>
+        //var users = [{ login: "rodrigo", senha: "rod" },{ login: "sabrina", senha: "sab" }];
+
+        //Constantes
+        var users = ["rodrigo", "sabrina"];
+        var pw = ["rod", "sab"];
+
+
+        function login() {
+
+            //Variaveis
+            var userLogin = document.getElementById("userLogin").value;
+            var pwPassword = document.getElementById("pwPassword").value;
+
+
+            for (var i = 0; i < users.length; i++) {
+                if (userLogin == users[i] && pwPassword == pw[i]) {
+                    location.href = 'http://www.google.com';
+                    return false
+                }
+                else {
+                    alert('Failed!')
+                    break
+                }
+            }
+            return false
+        }
+
+    </script>
+
+</body>
+
+</html>
