@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        class Jogador {
+            #nome;
+            #nascimento;
+            #nacionalidade;
+            #altura;
+            #peso;
+            #jogos;
+
+            constructor(nome) { 
+                this.setNome(nome); }
+
+
+            setNome(nome) { 
+                this.#nome = nome; }
+
+            getNome() { 
+                return this.#nome; }
+
+            setNascimento(nascimento) { 
+                this.#nascimento = nascimento; }
+
+            getNascimento() { 
+                return this.#nascimento; }
+
+            setNacionalidade(nacionalidade) { 
+                this.#nacionalidade = nacionalidade; }
+
+            getNacionalidade() { 
+                return this.#nacionalidade; }
+
+            setAltura(altura) { 
+                this.#altura = altura; }
+
+            getAltura() { 
+                return this.#altura; }
+
+            setPeso(peso) { 
+                this.#peso = peso; }
+
+            getPeso() { 
+                return this.#peso; }
+
+            setJogos(jogos) { 
+                this.#jogos = jogos; }
+
+            getJogos() { 
+                return this.#jogos }
+
+            getDadosJogador() {
+                return {
+                    nome: this.getNome(),
+                    nascimento: this.getNascimento(),
+                    nacionalidade: this.getNacionalidade(),
+                    altura: this.getAltura(),
+                    peso: this.getPeso(),
+                };
+            }
+
+        }
+
+        class Goleiro extends Jogador {
+            #golsBloqueados;
+            #golsVazados;
+            #penaltiesBloqueados;
+            #penaltiesVazados;
+
+            setGolsBloqueados(golsGB) { 
+                this.#golsBloqueados = golsGB }
+
+            getGolsBloqueados() { 
+                return this.#golsBloqueados }
+
+            setGolsVazados(golsGV) { 
+                this.#golsVazados = golsGV }
+
+            getGolsVazados() { 
+                return this.#golsVazados }
+
+            setPenaltiesBloqueados(golsPB) { 
+                this.#penaltiesBloqueados = golsPB }
+
+            getPenaltiesBloqueados() { 
+                return this.#penaltiesBloqueados }
+
+            setPenaltiesVazados(golsPV) { 
+                this.#penaltiesVazados = golsPV }
+
+            getPenaltiesVazados() { 
+                return this.#penaltiesVazados }
+
+
+        }
+
+
+        class Atacante extends Jogador {
+            #golsFeitos;
+            #golsPerdidos;
+            #penaltiesCobrados;
+            #penaltiesPerdidos;
+
+            setGolsFeitos(golsGF) { 
+                this.#golsFeitos = golsGF }
+
+            getGolsFeitoss() { 
+                return this.#golsFeitos }
+
+            setGolsPerdidos(golsGP) { 
+                this.#golsPerdidos = golsGP }
+
+            getGolsPerdidos() { 
+                return this.#golsPerdidos }
+
+            setPenaltiesCobrados(golsPC) { 
+                this.#penaltiesCobrados = golsPC }
+
+            getPenaltiesCobrados() { 
+                return this.#penaltiesCobrados }
+
+            setPenaltiesPerdidos(golsPP) { 
+                this.#penaltiesPerdidos = golsPP }
+
+            getPenaltiesPerdidos() { 
+                return this.#penaltiesPerdidos }
+
+        }
+
+
+
+        var tiquinho = new Goleiro('Joca da Silva');
+        tiquinho.setNascimento(new Date(1980, 11 - 1, 25));
+        tiquinho.setNacionalidade('brasileiro');
+        tiquinho.setAltura(1.78);
+        tiquinho.setPeso(78.5);
+        tiquinho.setJogos(10);
+
+        if (typeof tiquinho.getDadosJogador() === 'object')
+            console.log(tiquinho.getDadosJogador());
+        else
+            console.error('Oooops! Algo errado não está certo.');
+
+        tiquinho.setGolsBloqueados(6);
+        tiquinho.setGolsVazados(3);
+        tiquinho.setPenaltiesBloqueados(1);
+        tiquinho.setPenaltiesVazados(0);
+
+        console.log(
+            `Média de gols de ${tiquinho.getNome()} bloqueados por partida:`,
+            (tiquinho.getGolsBloqueados() + tiquinho.getPenaltiesBloqueados()) / tiquinho.getJogos()
+        );
+
+        console.log(
+            `Média de gols de ${tiquinho.getNome()} vazados por partida:`,
+            (tiquinho.getGolsVazados() + tiquinho.getPenaltiesVazados()) / tiquinho.getJogos()
+        )
+
+
+    </script>
+
+
+</body>
+
+</html>
